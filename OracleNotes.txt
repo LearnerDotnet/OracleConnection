@@ -1,0 +1,12 @@
+string procName = "pack_gca.GET_CHECKSHEET_ADMIN";
+                OracleParameter[] commandParameters = new OracleParameter[3];
+                commandParameters[0] = new OracleParameter("I_CHK_NO", OracleDbType.Varchar2, ChkShtNo, ParameterDirection.Input);
+                commandParameters[1] = new OracleParameter("O_MASTER_DATA", OracleDbType.RefCursor, ParameterDirection.Output);
+                commandParameters[2] = new OracleParameter("O_DETAIL_DATA", OracleDbType.RefCursor, ParameterDirection.Output);
+                DataSet ResultDS = OracleHelper.ExecuteDataset(strConnectionString, CommandType.StoredProcedure, procName, commandParameters);
+
+sample call above
+
+include dll reference
+
+add helper in code
